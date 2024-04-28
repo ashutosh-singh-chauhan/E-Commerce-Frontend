@@ -30,6 +30,7 @@ const Button: React.FC<Props> = ({
       color={color || "white"}
       bg={bgColor || "black"}
       _hover={{
+        color: "white",
         bg: "#1A202C",
       }}
       _disabled={{

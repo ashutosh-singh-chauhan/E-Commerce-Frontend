@@ -1,13 +1,18 @@
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import NewArivals from "@/components/NewArivals";
 import SignupStrip from "@/components/SignupStrip";
-import { Box, Button, Text } from "@chakra-ui/react";
+import TopSelling from "@/components/TopSelling";
 import React from "react";
 
 const HomePage = () => {
   return (
     <React.Fragment>
       <SignupStrip />
+      <Header />
       <HeroSection />
+      <NewArivals />
+      <TopSelling />
     </React.Fragment>
   );
 };

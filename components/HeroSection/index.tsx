@@ -1,7 +1,9 @@
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import Button from "../Button";
+import { HeroSectionStats } from "@/constants/home";
+import { IHeroStats } from "@/interfaces/home";
 
 interface Props {}
 const HeroSection: React.FC<Props> = () => {
@@ -38,7 +40,38 @@ const HeroSection: React.FC<Props> = () => {
           style.
         </Text>
         <Button buttonText="Shop Now" styles={{ marginTop: "32px" }} />
-        <HStack></HStack>
+        <HStack
+          mt={5}
+          justify={"space-between"}
+          maxW={"550px"}
+          align={"center"}
+        >
+          {HeroSectionStats.map((stat: IHeroStats, idx: number) => {
+            return (
+              <>
+                <VStack h="74px" key={idx + stat.subTitle} align={"flex-start"}>
+                  <Text fontSize={"lg"} fontWeight={"bold"}>
+                    {stat.title}
+                  </Text>
+                  <Text
+                    fontSize={"xs"}
+                    color={"blackAlpha.700"}
+                    fontWeight={400}
+                  >
+                    {stat.subTitle}
+                  </Text>
+                </VStack>
+                {idx < 2 ? (
+                  <Divider
+                    h="60px"
+                    orientation="vertical"
+                    borderColor="gray.500"
+                  />
+                ) : null}
+              </>
+            );
+          })}
+        </HStack>
       </Box>
       <Image
         width={100}

@@ -18,7 +18,11 @@ const SignupStrip: React.FC<Props> = () => {
           justify={"center"}
         >
           <Text color={"white"}>
-            Sign up and get 20% off to your first order. Sign Up Now
+            Sign up and get 20% off to your first order.
+          </Text>
+          &nbsp;
+          <Text cursor={"pointer"} textDecoration={"underline"} color={"white"}>
+            Sign Up Now
           </Text>
           <Icon
             pos={"absolute"}
