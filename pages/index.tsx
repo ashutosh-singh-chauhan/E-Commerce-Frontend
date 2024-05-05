@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import NewArivals from "@/components/NewArivals";
@@ -13,6 +14,7 @@ const HomePage = () => {
       <HeroSection />
       <NewArivals />
       <TopSelling />
+      <Footer />
     </React.Fragment>
   );
 };
