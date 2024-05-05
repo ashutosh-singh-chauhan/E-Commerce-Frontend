@@ -3,7 +3,10 @@ import {
   Center,
   GridItem,
   HStack,
+  Heading,
   Icon,
+  List,
+  ListItem,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
@@ -14,8 +17,7 @@ interface Props {}
 const Footer: React.FC<Props> = () => {
   return (
     <Box w="full" bg="#F0F0F0">
-      {/* <Flex py={10} h="full" w="full" maxW={"1240px"} m="auto"> */}
-      <SimpleGrid py={20} px={10} columns={12} spacing={3}>
+      <SimpleGrid py={20} px={10} columns={12} spacingX={4}>
         <GridItem colSpan={{ base: 12, lg: 3 }} w="full">
           <Text className="heading" fontWeight={"bold"} fontSize={"lg"}>
             SHOP.CO
@@ -70,11 +72,40 @@ const Footer: React.FC<Props> = () => {
             </Center>
           </HStack>
         </GridItem>
-        <GridItem colSpan={{ base: 12, lg: 3 }} w="full"></GridItem>
-        <GridItem colSpan={{ base: 12, md: 3 }}></GridItem>
-        <GridItem colSpan={{ base: 12, md: 3 }}></GridItem>
+        <GridItem colSpan={{ base: 12, lg: 3 }} w="full">
+          <Heading mb={5} size={"xs"}>
+            COMPANY
+          </Heading>
+          <List fontSize={"xs"} spacing={3}>
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Consectetur </ListItem>
+            <ListItem>Integer</ListItem>
+            <ListItem>Facilisis</ListItem>
+          </List>
+        </GridItem>
+        <GridItem colSpan={{ base: 12, md: 3 }}>
+          <Heading mb={5} size={"xs"}>
+            HELP
+          </Heading>
+          <List fontSize={"xs"} spacing={3}>
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Consectetur </ListItem>
+            <ListItem>Integer</ListItem>
+            <ListItem>Facilisis</ListItem>
+          </List>
+        </GridItem>
+        <GridItem colSpan={{ base: 12, md: 3 }}>
+          <Heading mb={5} size={"xs"}>
+            FAQ
+          </Heading>
+          <List fontSize={"xs"} spacing={3}>
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Consectetur </ListItem>
+            <ListItem>Integer</ListItem>
+            <ListItem>Facilisis</ListItem>
+          </List>
+        </GridItem>
       </SimpleGrid>
-      {/* </Flex> */}
     </Box>
   );
 };

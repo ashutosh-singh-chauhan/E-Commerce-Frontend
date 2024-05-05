@@ -10,6 +10,8 @@ interface Props {
   styles?: React.CSSProperties;
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
+  hoverColor?: string;
+  hoverBgColor?: string;
 }
 const Button: React.FC<Props> = ({
   color,
@@ -20,6 +22,8 @@ const Button: React.FC<Props> = ({
   styles,
   size = "md",
   disabled = false,
+  hoverBgColor,
+  hoverColor,
 }) => {
   return (
     <ChakraButton
@@ -30,8 +34,8 @@ const Button: React.FC<Props> = ({
       color={color || "white"}
       bg={bgColor || "black"}
       _hover={{
-        color: "white",
-        bg: "#1A202C",
+        color: hoverColor || "white",
+        bg: hoverBgColor || "#1A202C",
       }}
       _disabled={{
         cursor: "not-allowed",
