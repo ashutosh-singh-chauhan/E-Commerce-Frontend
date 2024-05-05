@@ -1,24 +1,32 @@
 import { HeroNewArivals } from "@/constants/home";
 import { INewArivals } from "@/interfaces/home";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import React from "react";
 
 import ArticleCard from "../ArticleCard";
 import Button from "../Button";
+import useMobile from "@/hooks/useMobile";
 
 const NewArivals = () => {
+  const { isMobile } = useMobile();
   return (
     <Flex direction={"column"} align={"center"} my={10}>
-      <Text
-        className="heading"
-        fontWeight={"bold"}
-        // textAlign={"center"}
-        as="h3"
-        fontSize={"xl"}
-      >
+      <Text className="heading" fontWeight={"bold"} as="h3" fontSize={"xl"}>
         NEW ARRIVALS
       </Text>
-      <Flex my={10} gap={4} justify={"center"}>
+      <Flex
+        pl={4}
+        pb={4}
+        w={"full"}
+        my={[8, null, null, 10]}
+        gap={4}
+        justify={isMobile ? "flex-start" : "center"}
+        overflowX={"auto"}
+        _last={{
+          pr: 4,
+        }}
+        className="hide_scrollbar"
+      >
         {HeroNewArivals.map((article: INewArivals, idx) => (
           <ArticleCard article={article} />
         ))}

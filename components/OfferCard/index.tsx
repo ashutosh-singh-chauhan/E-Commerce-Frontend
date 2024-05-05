@@ -7,21 +7,22 @@ interface Props {}
 const OfferCard: React.FC<Props> = () => {
   return (
     <Flex
-      m="auto"
+      direction={["column", null, null, "row"]}
+      mx={[4, null, null, "auto"]}
       mb={16}
-      width="full"
+      gap={3}
       maxW={"1200px"}
       bg="black"
       borderRadius={20}
-      px={12}
-      py={8}
+      px={[3, null, null, 12]}
+      py={[4, null, null, 8]}
       justify={"space-between"}
     >
-      <Box width={"550px"}>
+      <Box width={["full", null, null, "550px"]}>
         <Text
           className="heading"
           mb={2}
-          fontSize={"xl"}
+          fontSize={["lg", null, null, "xl"]}
           fontWeight={"semibold"}
           maxW="500px"
           lineHeight={"short"}
@@ -57,6 +58,8 @@ const OfferCard: React.FC<Props> = () => {
           hoverBgColor="white"
           styles={{
             width: "100%",
+            fontSize: "14px",
+            fontWeight: 600,
           }}
         />
       </VStack>

@@ -51,7 +51,7 @@ const config = {
 };
 
 const fontSizes = {
-  xs: "14px",
+  xs: "12px",
   sm: "16px",
   md: "20px",
   lg: "24px",

@@ -17,7 +17,13 @@ interface Props {}
 const Footer: React.FC<Props> = () => {
   return (
     <Box w="full" bg="#F0F0F0">
-      <SimpleGrid py={20} px={10} columns={12} spacingX={4}>
+      <SimpleGrid
+        py={[8, null, null, 20]}
+        px={[4, null, null, 10]}
+        columns={12}
+        spacingX={4}
+        spacingY={10}
+      >
         <GridItem colSpan={{ base: 12, lg: 3 }} w="full">
           <Text className="heading" fontWeight={"bold"} fontSize={"lg"}>
             SHOP.CO

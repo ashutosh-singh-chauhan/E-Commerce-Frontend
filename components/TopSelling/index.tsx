@@ -5,8 +5,10 @@ import React from "react";
 
 import ArticleCard from "../ArticleCard";
 import Button from "../Button";
+import useMobile from "@/hooks/useMobile";
 
 const TopSelling = () => {
+  const { isMobile } = useMobile();
   return (
     <Flex direction={"column"} align={"center"} my={10}>
       <Text
@@ -18,7 +20,19 @@ const TopSelling = () => {
       >
         Top Selling
       </Text>
-      <Flex my={10} gap={4} justify={"center"}>
+      <Flex
+        pl={4}
+        pb={4}
+        w={"full"}
+        my={10}
+        gap={4}
+        justify={isMobile ? "flex-start" : "center"}
+        overflowX={"auto"}
+        _last={{
+          pr: 4,
+        }}
+        className="hide_scrollbar"
+      >
         {HeroNewArivals.map((article: INewArivals, idx) => (
           <ArticleCard article={article} />
         ))}

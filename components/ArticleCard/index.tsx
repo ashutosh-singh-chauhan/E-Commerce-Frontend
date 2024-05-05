@@ -3,19 +3,27 @@ import React from "react";
 import StarRatings from "react-star-ratings";
 import Image from "next/image";
 import { Badge, Box, Card, HStack, Text, VStack } from "@chakra-ui/react";
+import useMobile from "@/hooks/useMobile";
 
 interface Props {
   article: INewArivals;
 }
 const ArticleCard: React.FC<Props> = ({ article }) => {
+  const { isMobile } = useMobile();
   return (
     <Card
+      minW={isMobile ? "200px" : "290px"}
       display={"flex"}
       flexDirection={"column"}
       borderRadius={20}
       cursor={"pointer"}
     >
-      <Box position={"relative"} width={"295px"} h="298px" borderRadius={20}>
+      <Box
+        position={"relative"}
+        width={isMobile ? "200px" : "290px"}
+        height={isMobile ? "200px" : "290px"}
+        borderRadius={20}
+      >
         <Image
           src={article.imageUrl}
           layout="fill"
@@ -27,7 +35,11 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
         />
       </Box>
       <VStack spacing={0} align={"flex-start"} p={2}>
-        <Text fontSize={"md"} fontWeight={"bold"}>
+        <Text
+          noOfLines={2}
+          fontSize={["sm", null, null, "md"]}
+          fontWeight={"bold"}
+        >
           {article.title}
         </Text>
         <HStack>

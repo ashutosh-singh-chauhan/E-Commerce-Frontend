@@ -1,9 +1,11 @@
+import useMobile from "@/hooks/useMobile";
 import { Flex, Icon, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
 interface Props {}
 const SignupStrip: React.FC<Props> = () => {
+  const { isMobile } = useMobile();
   const [closed, setClosed] = useState<boolean>(false);
   const handleClose = () => {
     setClosed(true);
@@ -17,22 +19,29 @@ const SignupStrip: React.FC<Props> = () => {
           py={2}
           justify={"center"}
         >
-          <Text color={"white"}>
+          <Text fontSize={["xs", null, null, "sm"]} color={"white"}>
             Sign up and get 20% off to your first order.
           </Text>
           &nbsp;
-          <Text cursor={"pointer"} textDecoration={"underline"} color={"white"}>
+          <Text
+            fontSize={["xs", null, null, "sm"]}
+            cursor={"pointer"}
+            textDecoration={"underline"}
+            color={"white"}
+          >
             Sign Up Now
           </Text>
-          <Icon
-            pos={"absolute"}
-            top={3}
-            right={"10%"}
-            color={"white"}
-            as={RxCross2}
-            cursor={"pointer"}
-            onClick={handleClose}
-          />
+          {!isMobile ? (
+            <Icon
+              pos={"absolute"}
+              top={3}
+              right={"10%"}
+              color={"white"}
+              as={RxCross2}
+              cursor={"pointer"}
+              onClick={handleClose}
+            />
+          ) : null}
         </Flex>
       )}
     </>
