@@ -13,3 +13,10 @@ export interface INewArivals {
   discountedPrice?: number;
   discountPercentage?: number;
 }
+
+export interface IHappyCustomers {
+  rating: number;
+  name: string;
+  desc: string;
+  verified: boolean;
+}

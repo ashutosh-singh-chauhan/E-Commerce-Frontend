@@ -74,3 +74,21 @@ a {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.slider-container {
+  margin: 20px 20px 60px 20px;
+  @media only screen and (min-width: 768px) {
+    margin: 20px 20px 80px 20px;
+  }
+  .slick-slide {
+    @media only screen and (min-width: 768px) {
+      margin: 0 10px;
+    }
+  }
+  .slick-list {
+    @media only screen and (min-width: 768px) {
+      max-height: 280px;
+    }
+    max-height: 300px;
+  }
+}
